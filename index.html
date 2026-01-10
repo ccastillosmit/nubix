@@ -145,6 +145,30 @@
                 font-size: 2.2rem;
             }
         }
+    
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
@@ -160,7 +184,7 @@
     </div>
 </header>
 
-<section>
+<section class="fade-in">
     <div class="container">
         <h3>Problemas que resolvemos</h3>
         <p>Muchas empresas enfrentan dificultades operativas y financieras que limitan su capacidad de tomar decisiones claras y oportunas.</p>
@@ -174,7 +198,7 @@
     </div>
 </section>
 
-<section>
+<section class="fade-in">
     <div class="container">
         <h3>Nuestro enfoque</h3>
         <p>Creemos que los problemas complejos no se resuelven desde una sola disciplina. Por eso trabajamos con un enfoque interdisciplinario que combina:</p>
@@ -215,7 +239,7 @@
     </div>
 </section>
 
-<section>
+<section class="fade-in">
     <div class="container">
         <h3>Cómo trabajamos</h3>
         <div class="steps">
@@ -236,5 +260,18 @@
     </div>
 </footer>
 
+    <script>
+        const elements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        elements.forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
