@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXO Consultoría | Gobierno de Datos para PYMES</title>
+    <meta name="description" content="Gobierno de datos práctico para pymes. Orden, trazabilidad y datos confiables para costos, reporting y decisiones de gestión.">
+
+    <style>
+        :root {
+            --blue: #0f2a44;
+            --blue-light: #1f4e6d;
+            --gray-dark: #2b2b2b;
+            --gray: #6b7280;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--gray-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--blue), var(--blue-light));
+            color: white;
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        header h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            max-width: 750px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            margin-right: 1rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .primary {
+            background-color: white;
+            color: var(--blue);
+        }
+
+        .secondary {
+            border: 1px solid white;
+            color: white;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            transition: background-color 0.4s ease;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        section:hover {
+            background-color: rgba(15, 42, 68, 0.03);
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--blue);
+        }
+
+        p {
+            max-width: 850px;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+            max-width: 850px;
+        }
+
+        li {
+            margin-bottom: 0.6rem;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        footer {
+            background-color: var(--blue);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        footer a {
+            color: white;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>Gobierno de Datos</h1>
+        <h2>Orden práctico para que los datos de una pyme sean confiables, útiles y acompañen la toma de decisiones</h2>
+        <div class="cta-buttons">
+            <a href="#contacto" class="primary">Conversemos</a>
+            <a href="index.html" class="secondary">Volver al inicio</a>
+        </div>
+    </div>
+</header>
+
+<section class="fade-in">
+    <div class="container">
+        <h3>Cuando los datos dejan de ayudar</h3>
+        <p>En muchas pymes la información existe, pero no está ordenada ni controlada. Cada área maneja sus propios archivos y los números no siempre coinciden.</p>
+        <ul>
+            <li>Reportes que no generan confianza</li>
+            <li>Costos que cambian según quién los calcule</li>
+            <li>Dependencia de personas clave</li>
+            <li>Retrabajos constantes</li>
+            <li>Decisiones basadas en intuición</li>
+        </ul>
+    </div>
+</section>
+
+<section class="fade-in">
+    <div class="container">
+        <h3>Qué entendemos por Gobierno de Datos</h3>
+        <p>Gobernar los datos no es burocracia ni estructuras corporativas complejas.</p>
+        <p>Para una pyme, significa:</p>
+        <ul>
+            <li>Definir qué datos son críticos para el negocio</li>
+            <li>Establecer responsables claros</li>
+            <li>Acordar reglas simples de uso y actualización</li>
+            <li>Asegurar consistencia y trazabilidad</li>
+        </ul>
+        <p>Es el orden mínimo necesario para crecer sin perder control.</p>
+    </div>
+</section>
+
+<section class="fade-in">
+    <div class="container">
+        <h3>Qué problemas resolvemos</h3>
+        <ul>
+            <li>Una única versión confiable de la información</li>
+            <li>Menos errores y discusiones internas</li>
+            <li>Soporte real a costos, reporting y planificación</li>
+            <li>Base sólida para automatizar procesos</li>
+        </ul>
+    </div>
+</section>
+
+<section class="fade-in">
+    <div class="container">
+        <h3>Cómo trabajamos</h3>
+        <div class="steps">
+            <div class="card">
+                <strong>1. Entendimiento del negocio</strong>
+                <p>Identificamos decisiones clave y los datos que las soportan.</p>
+            </div>
+            <div class="card">
+                <strong>2. Identificación de datos críticos</strong>
+                <p>Mapeamos fuentes, inconsistencias y dependencias.</p>
+            </div>
+            <div class="card">
+                <strong>3. Definición de responsabilidades</strong>
+                <p>Roles claros para carga, validación y uso.</p>
+            </div>
+            <div class="card">
+                <strong>4. Reglas mínimas de calidad</strong>
+                <p>Criterios simples, sin burocracia innecesaria.</p>
+            </div>
+            <div class="card">
+                <strong>5. Acompañamiento</strong>
+                <p>Ajustamos el modelo a medida que el negocio evoluciona.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="fade-in">
+    <div class="container">
+        <h3>Gobierno de datos como base del negocio</h3>
+        <p>El gobierno de datos no es un fin en sí mismo. Es la base que permite:</p>
+        <ul>
+            <li>Modelos de costos confiables</li>
+            <li>Reporting y BI que se usan</li>
+            <li>Automatización sin errores</li>
+            <li>Decisiones basadas en información consistente</li>
+        </ul>
+    </div>
+</section>
+
+<footer id="contacto">
+    <div class="container">
+        <h3>Contacto</h3>
+        <p>¿Querés ordenar tu información y decidir con mayor confianza?</p>
+        <p><a href="mailto:contacto@nexoconsultoria.com">contacto@nexoconsultoria.com</a></p>
+    </div>
+</footer>
+
+<script>
+    const elements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
