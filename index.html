@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEXO Consultoría | Ingeniería, economía y datos</title>
     <meta name="description" content="Consultoría interdisciplinaria en ingeniería, economía y datos para mejorar procesos, costos y decisiones de gestión.">
+
     <style>
         :root {
             --blue: #0f2a44;
@@ -20,8 +21,12 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: var(--gray-dark);
             line-height: 1.6;
             background-color: #ffffff;
@@ -41,7 +46,6 @@
         header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            letter-spacing: 1px;
         }
 
         header h2 {
@@ -72,10 +76,15 @@
 
         section {
             padding: 4rem 2rem;
+            transition: background-color 0.4s ease;
         }
 
         section:nth-child(even) {
             background-color: var(--bg-light);
+        }
+
+        section:hover {
+            background-color: rgba(15, 42, 68, 0.03);
         }
 
         h3 {
@@ -105,16 +114,54 @@
             margin-top: 2rem;
         }
 
+        .service-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .card {
             background: white;
             border-radius: 10px;
             padding: 2rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            background-color: #f1f5f9;
         }
 
         .card h4 {
             color: var(--blue);
             margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .card:hover h4 {
+            color: var(--blue-light);
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 4px;
+            width: 0;
+            background: linear-gradient(90deg, var(--blue), var(--blue-light));
+            transition: width 0.3s ease;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .card:hover::after {
+            width: 100%;
         }
 
         .steps {
@@ -130,22 +177,12 @@
             padding: 3rem 2rem;
         }
 
-        footer p {
-            max-width: 600px;
-        }
-
         footer a {
             color: white;
             font-weight: 600;
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-        }
-    
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -157,20 +194,14 @@
             transform: translateY(0);
         }
 
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-        }
-
-        html {
-            scroll-behavior: smooth;
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -187,13 +218,12 @@
 <section class="fade-in">
     <div class="container">
         <h3>Problemas que resolvemos</h3>
-        <p>Muchas empresas enfrentan dificultades operativas y financieras que limitan su capacidad de tomar decisiones claras y oportunas.</p>
         <ul>
             <li>Procesos poco claros o ineficientes</li>
             <li>Costos mal calculados o difíciles de explicar</li>
             <li>Información dispersa y sin control</li>
-            <li>Reportes manuales, lentos o poco confiables</li>
-            <li>Falta de criterios objetivos para decidir</li>
+            <li>Reportes manuales o poco confiables</li>
+            <li>Decisiones sin criterios objetivos</li>
         </ul>
     </div>
 </section>
@@ -201,13 +231,11 @@
 <section class="fade-in">
     <div class="container">
         <h3>Nuestro enfoque</h3>
-        <p>Creemos que los problemas complejos no se resuelven desde una sola disciplina. Por eso trabajamos con un enfoque interdisciplinario que combina:</p>
         <ul>
-            <li><strong>Ingeniería</strong> para analizar y optimizar procesos</li>
-            <li><strong>Economía</strong> para evaluar costos, inversiones y escenarios</li>
+            <li><strong>Ingeniería</strong> para optimizar procesos</li>
+            <li><strong>Economía</strong> para evaluar costos y escenarios</li>
             <li><strong>Datos</strong> para medir, automatizar y dar trazabilidad</li>
         </ul>
-        <p>El resultado son soluciones prácticas, escalables y alineadas al negocio.</p>
     </div>
 </section>
 
@@ -215,26 +243,34 @@
     <div class="container">
         <h3>Servicios</h3>
         <div class="services">
+
             <div class="card">
                 <h4>Automatización y datos</h4>
-                <p>Integraciones, ETL y eliminación de tareas manuales para mejorar la calidad y disponibilidad de la información.</p>
+                <p>Integraciones, ETL y eliminación de tareas manuales.</p>
             </div>
-            <div class="card">
-                <h4>Reporting y Business Intelligence</h4>
-                <p>Dashboards e indicadores claros para entender el negocio y tomar decisiones con información confiable.</p>
-            </div>
+
+            <a href="reporting.html" class="service-link">
+                <div class="card">
+                    <h4>Reporting y Business Intelligence</h4>
+                    <p>Dashboards e indicadores claros para decisiones confiables.</p>
+                </div>
+            </a>
+
             <div class="card">
                 <h4>Modelos de costos y planificación</h4>
-                <p>Estructuración de costos, simulación de escenarios y control financiero.</p>
+                <p>Estructuración de costos y simulación de escenarios.</p>
             </div>
+
             <div class="card">
                 <h4>Ingeniería aplicada a la gestión</h4>
-                <p>Análisis de procesos, simulación y optimización operativa con foco en eficiencia.</p>
+                <p>Análisis y optimización de procesos operativos.</p>
             </div>
+
             <div class="card">
                 <h4>Gobierno de datos</h4>
-                <p>Definición de roles, calidad de datos, estandarización y trazabilidad de la información.</p>
+                <p>Calidad, roles, trazabilidad y estandarización.</p>
             </div>
+
         </div>
     </div>
 </section>
@@ -243,10 +279,10 @@
     <div class="container">
         <h3>Cómo trabajamos</h3>
         <div class="steps">
-            <div class="card"><strong>1.</strong> Diagnóstico del problema</div>
-            <div class="card"><strong>2.</strong> Diseño de la solución</div>
-            <div class="card"><strong>3.</strong> Implementación técnica</div>
-            <div class="card"><strong>4.</strong> Acompañamiento y mejora continua</div>
+            <div class="card">1. Diagnóstico</div>
+            <div class="card">2. Diseño</div>
+            <div class="card">3. Implementación</div>
+            <div class="card">4. Acompañamiento</div>
         </div>
     </div>
 </section>
@@ -254,24 +290,24 @@
 <footer id="contacto">
     <div class="container">
         <h3>Contacto</h3>
-        <p>¿Querés mejorar tus procesos, tus costos o la calidad de tu información?</p>
-        <p>Escribinos y conversemos.</p>
-        <p><a href="mailto:contacto@nexoconsultoria.com">contacto@nexoconsultoria.com</a></p>
+        <p>contacto@nexoconsultoria.com</p>
     </div>
 </footer>
 
-    <script>
-        const elements = document.querySelectorAll('.fade-in');
+<script>
+    const elements = document.querySelectorAll('.fade-in');
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.15 });
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
 
-        elements.forEach(el => observer.observe(el));
-    </script>
+    elements.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
+
