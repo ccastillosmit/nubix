@@ -245,10 +245,11 @@
 <div class="services">
 
     <a href="automatizacion-datos.html" class="service-link">
-    <div class="card">
-        <h4>Automatización y datos</h4>
-        <p>Integraciones, ETL y eliminación de tareas manuales.</p>
-    </div>
+        <div class="card">
+            <h4>Automatización y datos</h4>
+            <p>Integraciones, ETL y eliminación de tareas manuales.</p>
+        </div>
+    </a>
 
     <a href="reporting.html" class="service-link">
         <div class="card">
@@ -265,57 +266,33 @@
     </a>
 
     <a href="ingenieria-gestion.html" class="service-link">
-    <div class="card">
-        <h4>Ingeniería aplicada a la gestión</h4>
-        <p>Análisis y optimización de procesos operativos.</p>
-    </div>
+        <div class="card">
+            <h4>Ingeniería aplicada a la gestión</h4>
+            <p>Análisis y optimización de procesos operativos.</p>
+        </div>
+    </a>
 
     <a href="gobierno-datos.html" class="service-link">
-    <div class="card">
-        <h4>Gobierno de datos</h4>
-        <p>Calidad, roles, trazabilidad y estandarización.</p>
-    </div>
+        <div class="card">
+            <h4>Gobierno de datos</h4>
+            <p>Calidad, roles, trazabilidad y estandarización.</p>
+        </div>
+    </a>
+
+    <!-- NUEVO -->
+    <a href="planning.html" class="service-link">
+        <div class="card">
+            <h4>Planning</h4>
+            <p>Planificación de demanda, producción y capacidad con foco en toma de decisiones.</p>
+        </div>
+    </a>
+
+    <!-- NUEVO -->
+    <a href="transformacion-digital.html" class="service-link">
+        <div class="card">
+            <h4>Transformación digital</h4>
+            <p>Rediseño de procesos y adopción de tecnología para escalar la gestión.</p>
+        </div>
+    </a>
 
 </div>
-
-
-        </div>
-    </div>
-</section>
-
-<section class="fade-in">
-    <div class="container">
-        <h3>Cómo trabajamos</h3>
-        <div class="steps">
-            <div class="card">1. Diagnóstico</div>
-            <div class="card">2. Diseño</div>
-            <div class="card">3. Implementación</div>
-            <div class="card">4. Acompañamiento</div>
-        </div>
-    </div>
-</section>
-
-<footer id="contacto">
-    <div class="container">
-        <h3>Contacto</h3>
-        <p>contacto@nexoconsultoria.com</p>
-    </div>
-</footer>
-
-<script>
-    const elements = document.querySelectorAll('.fade-in');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.15 });
-
-    elements.forEach(el => observer.observe(el));
-</script>
-
-</body>
-</html>
-
